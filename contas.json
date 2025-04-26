@@ -1,0 +1,17 @@
+[ {
+  "saldo" : 3300.0,
+  "numConata" : "5705-4",
+  "ativa" : true,
+  "dono" : {
+    "nome" : "luis"
+  },
+  "tipo" : "Conta Corrente "
+}, {
+  "saldo" : 400.0,
+  "numConata" : "4147-1",
+  "ativa" : true,
+  "dono" : {
+    "nome" : "lucas"
+  },
+  "tipo" : "Conta Corrente"
+} ]

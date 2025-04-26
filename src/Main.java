@@ -34,10 +34,10 @@ public class Main {
             System.out.println("╔══════════════════════════════════════════════╗");
             System.out.println("║                BANCO VIRTUAL                 ║");
             System.out.print("╚══════════════════════════════════════════════╝\n");
-            System.out.print("\uD83D\uDC64 " + accont.getDono().getNome());
+            System.out.print("👤 " + accont.getDono().getNome());
             System.out.print(" | 💵 " + accont.getSaldo());
-            System.out.print(" | \uD83D\uDD22 " + accont.getNumConata());
-            System.out.print(" | \uD83C\uDFE6 " + accont.getTipo());
+            System.out.print(" | 🔢 " + accont.getNumConata());
+            System.out.print(" | 🏦 " + accont.getTipo());
             System.out.print(
                             "\n3️⃣  Transferência 💸\n" +
                             "4️⃣  Depósito 💰\n" +

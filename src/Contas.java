@@ -9,24 +9,41 @@ import java.util.List;
 
 public class Contas {
     public ContaBancaria pesquisarConta(String numeroConta, File arquivo, ObjectMapper conversor) {
-
         try {
             if (!arquivo.exists() || arquivo.length() == 0) {
                 System.out.println("Arquivo não encontrado ou vazio.");
                 return null;
             }
-
             List<ContaBancaria> contas = conversor.readValue(arquivo, new TypeReference<List<ContaBancaria>>() {
             });
-
             for (ContaBancaria conta : contas) {
-                if (conta.getNumConata().equals(numeroConta)) {
+                if(conta != null){
+                    if (conta.getNumConata().equals(numeroConta)) {
+                        return conta;
+                    }
+                }
+            }
+            return null;
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public ContaBancaria pesquisarNome(String name, File arquivo, ObjectMapper conversor) {
+        try {
+            if (!arquivo.exists() || arquivo.length() == 0) {
+                System.out.println("Arquivo não encontrado ou vazio.");
+                return null;
+            }
+            List<ContaBancaria> contas = conversor.readValue(arquivo, new TypeReference<List<ContaBancaria>>() {
+            });
+            for (ContaBancaria conta : contas) {
+                if (conta.getDono().getNome().equals(name)) {
                     return conta;
                 }
             }
-
             return null;
-
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
             return null;

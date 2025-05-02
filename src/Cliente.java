@@ -7,7 +7,6 @@ public class Cliente{
     }
     public Cliente() {
     }
-
     //Metodos especiais
     public String getNome() {
         return nome;

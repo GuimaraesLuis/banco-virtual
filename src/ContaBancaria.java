@@ -1,5 +1,4 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
@@ -21,27 +20,12 @@ public class ContaBancaria  {
     public ContaBancaria() {
 
     }
-
-    public void tipoCont(){
-        System.out.print("1)Conta Corrente\n2)Conta Poupança\nEscolha um tipo de conta:" );
-        int type = sc.nextInt();
-        switch (type){
-            case 1:
-                this.setTipo("Conta Corrente");
-                System.out.println(this.tipo);
-                break;
-            case 2:
-                this.setTipo("Conta poupança");
-                System.out.println(this.tipo);
-                break;
-            default:
-                System.out.println("Numero invalido");
-        }
-    }
     public ContaBancaria login(String numeroConta, File arquivo,ObjectMapper mapper, Contas contas ){
         ContaBancaria banco = contas.pesquisarConta(numeroConta,arquivo,mapper);
-        if(banco.getNumConata().equals(numeroConta)){
-        return banco;
+        if(banco != null){
+            if (banco.getNumConata().equals(numeroConta)) {
+                return banco;
+            }
         }
         return null;
     }
@@ -73,21 +57,6 @@ public class ContaBancaria  {
             this.ativa = false;
         }
     }
-
-    public void status(ContaBancaria c){
-        if(ativa == true) {
-            System.out.println("========================");
-            System.out.println("DETALHES DA CONTA");
-            System.out.println("NOME: " + c.dono.getNome());
-            System.out.println("SALDO: " + c.saldo);
-            System.out.println("N°: " + c.numConata);
-            System.out.println("Tipo: " +  c.tipo);
-            System.out.println("========================");
-        }else{
-            System.out.println("Voce nn tem uma conta");
-        }
-    }
-
     public void trasnferir(ContaBancaria t, int valor){
             if(this.saldo >= valor){
                 this.setSaldo(getSaldo() - valor);
@@ -113,14 +82,12 @@ public class ContaBancaria  {
                 this.setSaldo(getSaldo() - valor);
                 System.out.println("Você sacou " + valor);
             } else {
-                System.out.println("Você não tem saldo sufuciente!!");
+                System.out.println("Você não tem saldo suficiente!!");
             }
         }else{
             System.out.println("Voce nn tem uma conta!!");
         }
     }
-
-
 
     //metodos especiaias
     public double getSaldo() {

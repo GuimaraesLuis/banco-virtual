@@ -1,7 +1,7 @@
 [ {
   "saldo" : 900.0,
   "numConata" : "5705-4",
-  "ativa" : true,
+  "ativa" : "true",
   "dono" : {
     "nome" : "luis"
   },
@@ -9,15 +9,15 @@
 }, {
   "saldo" : 66567.0,
   "numConata" : "4147-1",
-  "ativa" : true,
+  "ativa" : "true",
   "dono" : {
     "nome" : "lucas"
   },
   "tipo" : "Conta Poupança"
 }, {
-  "saldo" : 3000.0,
+  "saldo" : 800.0,
   "numConata" : "6100-2",
-  "ativa" : true,
+  "ativa" : "true",
   "dono" : {
     "nome" : "mocoto"
   },
@@ -25,7 +25,7 @@
 }, {
   "saldo" : 50000.0,
   "numConata" : "5748-2",
-  "ativa" : true,
+  "ativa" : "true",
   "dono" : {
     "nome" : "Gh"
   },
@@ -33,9 +33,17 @@
 }, {
   "saldo" : 4070.0,
   "numConata" : "3623-5",
-  "ativa" : true,
+  "ativa" : "true",
   "dono" : {
     "nome" : "Joao"
   },
-  "tipo" : "Conta Corrente"
+  "tipo" : "Conta Poupança"
+}, {
+  "saldo" : 400.0,
+  "numConata" : "5749-6",
+  "ativa" : "true",
+  "dono" : {
+    "nome" : "bruna"
+  },
+  "tipo" : "Conta Poupança"
 } ]
